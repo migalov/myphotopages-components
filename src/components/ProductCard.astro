@@ -1,0 +1,72 @@
+---
+const {title, parameters, price, href, srcAlt, srcWEBP } = Astro.props;
+---
+
+
+<a class="mpp-product-card" href={href}>
+    <picture>
+        <source src={srcWEBP}>
+        <img class="mpp-product-card__image" src={srcAlt}>
+    </picture>
+    <div class="mpp-product-card-info">
+        <h3 class="mpp-product-card__title">{title}</h3>
+        <div class="mpp-product-card-bottom">
+            <span set:html={parameters} class="mpp-product-card__parameters"></span>
+            <span class="mpp-product-card__price">{price} ₽</span>
+        </div>
+    </div>
+
+</a>
+
+<style lang="scss">
+    .mpp-product-card {
+        min-width: 200px;
+        transition: all ease .5s;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow:  0 4px 16px 0 rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: var(--blackColor);
+        flex: 1;
+        &:hover {
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+    .mpp-product-card__image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+    .mpp-product-card-info {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.4rem;
+        flex: 1;
+    }
+    .mpp-product-card__title {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0;
+    }
+    
+    .mpp-product-card-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .mpp-product-card__parameters {
+        font-size: 7px;
+    }
+    .mpp-product-card__price {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--primaryColor);
+    }
+
+</style>

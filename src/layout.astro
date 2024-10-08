@@ -1,0 +1,55 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700" rel="stylesheet">
+
+        <style is:global>
+            :root {
+                --primaryColor: #f3704e;
+                --secondColor: #f0f0f0;
+                --violetColor: #9747ff;
+                --orangeSecondColor: #f79767;
+                --elecPink: #ff3596;
+                --blackColor: #000;
+                --whiteColor: #fff;
+                --lavandaColor: #e7e2f6;
+                --greenColor: #deefea;
+                --firstFont: "Montserrat", sans-serif;
+                --defaultAnimate: ease .5s;
+            }
+            html, body {
+                font-family: var(--firstFont);
+            }
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            *, *::before, *::after {
+                box-sizing: border-box;
+            }
+
+            h1, h2 ,h3{
+                margin: 0;
+            }
+            .container {
+                margin: 0 auto;
+                padding: 0 2rem;
+                max-width: 1270px;
+            }
+        </style>
+	</head>
+	<body>
+        <slot />
+	</body>
+</html>

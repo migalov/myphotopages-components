@@ -1,16 +1,148 @@
 ---
+import ProductCard from "../components/ProductCard.astro";
+import Layout from "../layout.astro";
+
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+	<h1>Astro</h1>
+		<div class="mpp-widget-products">
+			<div class="container">
+				<h2>Рекомендуем</h2>
+				<div class="mpp-widget-products-wrapper mpp-widget-products-wrapper-line">
+					<ProductCard
+					title="Коллекционная фотокнига в комбинированной обложке алого цвета"
+					parameters={"22.5х28 см<br>100, 120"}
+					price="8000"
+					href="/link"
+					srcWEBP="https://static.wow2print.com/storage/445/store/product/471040389669652933d6ec8.84864981.jpg"
+					srcAlt="https://dummyjson.com/image/200x200"
+				/>
+				<ProductCard
+					title="Коллекционная фотокнига в комбинированной обложке серо-голубого цвета"
+					parameters={"22.5х28 см<br>100, 120"}
+					price="8000"
+					href="/link"
+					srcWEBP="https://static.wow2print.com/storage/445/store/product/471040389669652933d6ec8.84864981.jpg"
+					srcAlt="https://dummyjson.com/image/200x200"
+				/>
+				<ProductCard
+					title="Коллекционная фотокнига в комбинированной обложке терракотового цвета"
+					parameters={"22.5х28 см<br>100, 120"}
+					price="8000"
+					href="/link"
+					srcWEBP="https://static.wow2print.com/storage/445/store/product/471040389669652933d6ec8.84864981.jpg"
+					srcAlt="https://dummyjson.com/image/200x200"
+				/>
+				<ProductCard
+					title="Коллекционная фотокнига в тканевой обложке терракотового цвета"
+					parameters={"22.5х28 см<br>100, 120"}
+					price="8000"
+					href="/link"
+					srcWEBP="https://static.wow2print.com/storage/445/store/product/471040389669652933d6ec8.84864981.jpg"
+					srcAlt="https://dummyjson.com/image/200x200"
+				/>
+			</div>
+
+			
+		</div>
+		</div>
+		<div class="mpp-widget-products">
+			<div class="container">
+				<h2>Рекомендуем</h2>
+				<div class="mpp-widget-products-wrapper mpp-widget-products-wrapper-grid">
+					<ProductCard
+					title="Коллекционная фотокнига в комбинированной обложке алого цвета"
+					parameters={"22.5х28 см<br>100, 120"}
+					price="8000"
+					href="/link"
+					srcWEBP="https://static.wow2print.com/storage/445/store/product/471040389669652933d6ec8.84864981.jpg"
+					srcAlt="https://dummyjson.com/image/200x200"
+				/>
+				<ProductCard
+					title="Коллекционная фотокнига в комбинированной обложке серо-голубого цвета"
+					parameters={"22.5х28 см<br>100, 120"}
+					price="8000"
+					href="/link"
+					srcWEBP="https://static.wow2print.com/storage/445/store/product/471040389669652933d6ec8.84864981.jpg"
+					srcAlt="https://dummyjson.com/image/200x200"
+				/>
+				<ProductCard
+					title="Коллекционная фотокнига в комбинированной обложке терракотового цвета"
+					parameters={"22.5х28 см<br>100, 120"}
+					price="8000"
+					href="/link"
+					srcWEBP="https://static.wow2print.com/storage/445/store/product/471040389669652933d6ec8.84864981.jpg"
+					srcAlt="https://dummyjson.com/image/200x200"
+				/>
+				<ProductCard
+					title="Коллекционная фотокнига в тканевой обложке терракотового цвета"
+					parameters={"22.5х28 см<br>100, 120"}
+					price="8000"
+					href="/link"
+					srcWEBP="https://static.wow2print.com/storage/445/store/product/471040389669652933d6ec8.84864981.jpg"
+					srcAlt="https://dummyjson.com/image/200x200"
+				/>
+			</div>
+
+			
+		</div>
+		</div>	
+</Layout>
+
+
+<style lang="scss">
+
+	:root {
+		--paddingShadow: 14px;
+	}
+
+	.container:has( .mpp-widget-products-wrapper) {
+		padding: 0 calc(2rem - var(--paddingShadow));
+
+		& h2 {
+			padding: 0 var(--paddingShadow);
+		}
+	}
+	.mpp-widget-products {
+		width: 100%;
+
+		& :is(h1, h2) {
+			margin-bottom: 1rem;
+		}
+		overflow: hidden;
+	}
+
+	.mpp-widget-products-wrapper {
+		gap: 2rem;
+		padding: var(--paddingShadow);
+	}
+
+	.mpp-widget-products--shadow {
+
+	}
+
+	.mpp-widget-products-wrapper-line {
+		display: flex;
+		overflow-x: auto;
+
+		& .mpp-product-card {
+			
+		}
+	}
+
+	.mpp-widget-products-wrapper-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		@media (min-width:768px) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
+		@media (min-width:992px) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+	}
+</style>
+

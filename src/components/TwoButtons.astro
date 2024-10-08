@@ -1,0 +1,41 @@
+<div class="mpp-two-buttons">
+    <input checked type="radio" name="delivery_company" value="boxberry" id="" aria-label="Boxberry" style="--bg-image: url(https://static.wow2print.com/storage/445/content/image/133122123866f15436863619.06278590.png)" />
+    <input type="radio" name="delivery_company" value="cdek" id="" aria-label="CDEK" style="--bg-image: url(https://static.wow2print.com/storage/445/content/image/116726854766f15436c70e17.60325860.png)" />
+</div>
+
+<style lang="scss">
+    .mpp-two-buttons {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+
+        & input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            appearance: none;
+            flex: 1;
+            height: 42px;
+            background-color: var(--secondColor);
+            border-radius: 5px;
+            transition: outline 350ms ease-in-out;
+            outline: 1px solid transparent;
+            cursor: pointer;
+            &:checked {
+                outline: 1px solid var(--primaryColor);
+            }
+            &::before {
+                content: "";
+                background-image: var(--bg-image);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 120px;
+                height: 25px;
+                
+            }
+
+        }
+    }
+</style>

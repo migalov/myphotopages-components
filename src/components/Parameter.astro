@@ -1,0 +1,20 @@
+---
+const {title, value} = Astro.props;
+---
+
+<div class="mpp-calculator-parameter">
+    <span class="mpp-calculator-parameter__title">{title}</span>
+    <span class="mpp-calculator-parameter__value">{value}</span>
+</div>
+
+<style lang="scss">
+    .mpp-calculator-parameter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mpp-calculator-parameter__value {
+        font-weight: 700;
+    }
+</style>

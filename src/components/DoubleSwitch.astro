@@ -1,0 +1,39 @@
+<div class="mpp-double-switch">
+    <input type="radio" checked name="type_delivery" value="pvz" aria-label="Самовывоз из ПВЗ" />
+    <input type="radio" name="type_delivery" value="courier" aria-label="Курьер" />
+</div>
+
+
+
+<style lang="scss" is:global>
+    .mpp-double-switch {
+        width: 400px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: .25rem;
+        background-color: var(--secondColor);
+
+        & input {
+            font-family: var(--firstFont);
+            font-size: 14px;
+            appearance: none;
+            flex: 1;
+            padding: .8em;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 350ms;
+
+            &::after {
+                content: attr(aria-label);
+            }
+            &:checked {
+                font-weight: 500;
+                background-color: #fff;
+
+            }
+        }
+
+    }
+</style>

@@ -1,0 +1,102 @@
+---
+const { name, options } = Astro.props;
+---
+
+<select name={name} id={name} class="select">
+    {
+        options.map( value => 
+            <option>{value}</option>
+        )
+    }
+</select>
+<link href="https://cdn.jsdelivr.net/npm/choices.js@11.0.2/public/assets/styles/choices.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/choices.js@11.0.2/public/assets/scripts/choices.min.js" is:inline></script>
+
+
+<style lang="scss" is:global>
+    .mpp-calculator-delivery .choices {
+        margin-bottom: 0;
+    }
+    .choices__list--dropdown {
+        transition: opacity 350ms ease-in-out;
+        &[aria-expanded="false"] {
+            display: block!important;
+            opacity: 0;
+            pointer-events: none;
+        }
+        &[aria-expanded="true"] {
+            opacity: 1;
+        }
+    }
+</style>
+
+
+<script>
+
+const element = document.querySelector('.select');
+const choices = new Choices(element, {
+  searchEnabled: false,
+  position: 'bottom',
+  itemSelectText: 'Заголовок'
+});
+
+const getPointsBoxberry = () => {
+
+}
+const API_URL = "https://api.boxberry.ru/json.php";
+const API_TOKEN = "a84e7c1ea388f4e610b75a83105f31dd";
+const getDataDeliveryBoxberry = () => {
+    fetch(`${API_URL}?token=${API_TOKEN}&method=ListPoints`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': "*"
+        },
+    }).then(res => {
+        console.log(res);
+    });
+};
+
+getDataDeliveryBoxberry();
+
+    // let customSelects = document.querySelectorAll(".custom-select");
+
+    // [...customSelects].forEach(sel => {
+
+    //     let customCurrentOption = document.createElement("div");
+    //     customCurrentOption.classList.add("custom-select__current-value");
+    //     customCurrentOption.setAttribute("aria-label", "Выберите регион");
+
+    //     sel.appendChild(customCurrentOption);
+        
+
+        // let customList = sel.querySelector("ul");
+        // let customOptions = customList.querySelectorAll("li");
+        // let oldSelect = sel.querySelector("select");
+        // let customCurrentOption = sel.querySelector(".custom-select__current-value");
+
+        // const toggleDropdownList = () => {
+        //     customList.classList.toggle("open-dropdown");
+        // }
+
+        // customCurrentOption?.addEventListener("click", toggleDropdownList);
+
+        // [...customOptions].forEach((item, idx) => {
+
+            
+
+        //     item.addEventListener("click", (_item) => {
+        //         // let number = _item.target.getAttribute("data-number");
+        //         console.log(_item.target);
+        //         oldSelect.selectedIndex = idx;
+        //         console.log(oldSelect?.value);
+        //         customCurrentOption.innerText = oldSelect?.value;
+        //         toggleDropdownList();
+
+        //     });
+
+        // })
+
+    // });
+
+
+</script>
